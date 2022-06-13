@@ -45,6 +45,18 @@ class BowlingGameTest {
         assertThat(score).isEqualTo(11);
     }
 
+    @Test
+    void should_return_26_when_first_three_rolls_are_8_2_spare_8_and_no_other_roll_hits_a_pin() {
+        rolls.add(8);
+        rolls.add(2);
+        rolls.add(8);
+        fillWithZeroFrames(rolls, 17);
+
+        final var score = bowlingGame.calculateScore(rolls);
+
+        assertThat(score).isEqualTo(26);
+    }
+
     private void fillWithZeroFrames(final List<Integer> rolls, final int numberOfRolls) {
         for(int i = 0; i < numberOfRolls; i++) {
             rolls.add(0);
