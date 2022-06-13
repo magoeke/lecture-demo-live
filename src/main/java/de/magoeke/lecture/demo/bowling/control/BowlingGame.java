@@ -2,6 +2,9 @@ package de.magoeke.lecture.demo.bowling.control;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class BowlingGame {
 
     public int calculateScore(List<Integer> rolls) {
