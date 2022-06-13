@@ -5,7 +5,13 @@ import java.util.List;
 public class BowlingGame {
 
     public int calculateScore(List<Integer> rolls) {
-        return 0;
+        var result = 0;
+
+        for(var roll : rolls) {
+            result += roll;
+        }
+
+        return result;
     }
 
 }
