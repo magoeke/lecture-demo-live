@@ -34,14 +34,15 @@ class BowlingGameTest {
     }
 
     @Test
-    void should_return_9_when_first_frame_is_8_and_1_and_all_other_rolls_miss() {
+    void should_return_11_when_first_three_rolls_are_8_1_2_and_no_other_roll_hits_a_pin() {
         rolls.add(8);
         rolls.add(1);
-        fillWithZeroFrames(rolls, 18);
+        rolls.add(2);
+        fillWithZeroFrames(rolls, 17);
 
         final var score = bowlingGame.calculateScore(rolls);
 
-        assertThat(score).isEqualTo(9);
+        assertThat(score).isEqualTo(11);
     }
 
     private void fillWithZeroFrames(final List<Integer> rolls, final int numberOfRolls) {
